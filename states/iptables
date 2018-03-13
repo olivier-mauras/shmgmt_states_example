@@ -2,7 +2,7 @@
 set -e
 
 # First install package and exit if fails as it's required for subsequent steps
-#$SHELL ${INSTALLDIR}/modules/${DIST}_package install iptables || exit 1
+${package} install iptables || exit 1
 
 # Then deploy file but ensure directory is present
 ${directory} -d /etc/iptables
@@ -10,4 +10,4 @@ ${file} -b -s ${STATEDIR}/files/etc/iptables/iptables.rules \
                               -d /etc/iptables/iptables.rules
 
 # Then if successful restart service
-#${DIST}_service -e restart iptables iptables.rules
+${service} -e restart iptables iptables.rules

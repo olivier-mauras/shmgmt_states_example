@@ -10,4 +10,4 @@ $SHELL ${INSTALLDIR}/modules/file -b -s ${STATEDIR}/files/etc/iptables/iptables.
                               -d /etc/iptables/iptables.rules
 
 # Then if successful restart service
-$SHELL ${INSTALLDIR}/modules/${DIST}_service -e restart iptables
+$SHELL ${INSTALLDIR}/modules/${DIST}_service -e restart iptables iptables.rules
